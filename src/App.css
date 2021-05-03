@@ -1,1 +1,162 @@
 /* Other rules */
+
+.app {
+  font-family: "roboto", sans-serif;
+}
+
+/* HEADER */
+
+header {
+  height: 59px;
+  border-bottom: solid 1px rgb(230, 228, 228);
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  height: 49px;
+}
+
+/* UNDER HEADER */
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.under-header {
+  padding: 30px 15px;
+  display: flex;
+  align-items: center;
+  height: 257px;
+}
+
+.under-header div:first-child {
+  width: 70%;
+}
+
+.under-header div:last-child {
+  height: 80%;
+  width: 30%;
+  margin-left: 20px;
+}
+
+.under-header img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.under-header p {
+  font-size: 19px;
+  line-height: 28px;
+  color: #868a8a;
+}
+
+/* MAIN */
+
+main {
+  background-color: #f3f5f5;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+.container {
+  max-width: 1200px;
+  display: flex;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.meals-container {
+  width: 66%;
+}
+
+.basket-container {
+  width: 33%;
+}
+
+h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.meals {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.meal {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 15px;
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  display: flex;
+  margin-bottom: 25px;
+  height: 160px;
+}
+
+.meals .meal:nth-child(odd) {
+  margin-right: 20px;
+}
+
+.img-menu {
+  height: 130px;
+  width: 130px;
+}
+
+.img-menu img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.meal-description-img {
+  width: 60%;
+  padding-right: 20px;
+}
+
+.meal-description-img > p,
+.meal-description > p {
+  height: 50px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  color: #868a8a;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.meal-price-and-popular {
+  display: flex;
+}
+
+.meal-price-and-popular p:first-child {
+  color: #868a8a;
+  font-size: 17px;
+  margin-right: 30px;
+}
+
+.star-popular {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  margin-right: 10px;
+}
+
+.popular {
+  color: #ff8000;
+  font-size: 12px;
+  font-weight: 700;
+}
