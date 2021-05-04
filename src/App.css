@@ -56,6 +56,15 @@ h2 {
   color: #868a8a;
 }
 
+.container-under-header {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 /* MAIN */
 
 main {
@@ -78,7 +87,8 @@ h3 {
 }
 
 .meals-container {
-  width: 800px;
+  width: 790px;
+  margin-right: 20px;
 }
 
 .basket-container {
@@ -178,7 +188,7 @@ h4 {
   border-radius: 5px;
   position: sticky;
   top: 0;
-  width: 350px;
+
   margin-top: 50px;
 }
 
@@ -272,4 +282,57 @@ h4 {
 
 .hidden {
   display: none;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1024px) {
+  .meal {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .meals .meal:nth-child(odd) {
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .under-header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .under-header div:first-child {
+    width: 100%;
+  }
+
+  .under-header div:last-child {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+
+  .under-header p {
+    font-size: 19px;
+    line-height: 28px;
+    color: #868a8a;
+    text-align: justify;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+  }
+
+  .meals-container {
+    width: 100%;
+  }
+
+  .basket-container {
+    width: 100%;
+  }
+
+  .basket {
+    margin-bottom: 50px;
+  }
 }

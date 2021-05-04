@@ -45,7 +45,7 @@ function App() {
       <header>
         <img src={logo} alt="" />
       </header>
-      <div className="under-header container">
+      <div className="under-header container-under-header">
         <div>
           <h2>{data.restaurant.name}</h2>
           <p>{data.restaurant.description}</p>
