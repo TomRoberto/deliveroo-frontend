@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Meals from "./components/Meals";
+import BasketItem from "./components/BasketItem";
 import logo from "./assets/Deliveroo_logo.svg.png";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +11,7 @@ library.add(faStar);
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [basket, setBasket] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +28,15 @@ function App() {
     };
     fetchData();
   }, []);
+
+  const displayPrice = () => {
+    let price = 0;
+    for (let i = 0; i < basket.length; i++) {
+      price += Number(basket[i].price) * basket[i].quantity;
+    }
+
+    return price;
+  };
 
   return isLoading ? (
     <div>En cours de chargement</div>
@@ -51,13 +62,62 @@ function App() {
                 return (
                   <div key={index}>
                     <h3>{elem.name}</h3>
-                    <Meals meals={elem.meals} />
+                    <Meals
+                      meals={elem.meals}
+                      basket={basket}
+                      setBasket={setBasket}
+                    />
                   </div>
                 );
               }
             })}
           </div>
-          <div className="basket-container"></div>
+          <div className="basket-container">
+            <div className="basket">
+              <button
+                className={
+                  basket.length === 0
+                    ? "button-empty-basket"
+                    : "button-not-empty-basket"
+                }
+              >
+                Valider mon panier
+              </button>
+              <div className={basket.length === 0 && "hidden"}>
+                <div className="basket-content">
+                  {basket.map((elem, index) => {
+                    return (
+                      <BasketItem
+                        key={elem.id}
+                        meal={elem}
+                        basket={basket}
+                        setBasket={setBasket}
+                      />
+                    );
+                  })}
+                </div>
+                <div className="basket-price">
+                  <div className="sous">
+                    <p>Sous-total</p>
+                    <p>{displayPrice().toFixed(2)} €</p>
+                  </div>
+                  <div className="livraison">
+                    <p>Frais de livraison</p>
+                    <p>2.50 €</p>
+                  </div>
+                </div>
+                <div className="basket-total">
+                  <p>Total</p>
+                  <p>{(displayPrice() + 2.5).toFixed(2)} €</p>
+                </div>
+              </div>
+              <div
+                className={basket.length !== 0 ? "hidden" : "your-basket-empty"}
+              >
+                <p>Votre panier est vide</p>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>

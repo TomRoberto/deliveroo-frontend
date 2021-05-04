@@ -71,17 +71,18 @@ h3 {
 .container {
   max-width: 1200px;
   display: flex;
+  justify-content: space-between;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .meals-container {
-  width: 66%;
+  width: 800px;
 }
 
 .basket-container {
-  width: 33%;
+  width: 350px;
 }
 
 h4 {
@@ -103,6 +104,14 @@ h4 {
   display: flex;
   margin-bottom: 25px;
   height: 160px;
+}
+
+.meal:hover {
+  cursor: pointer;
+}
+
+.meal:hover h4 {
+  text-decoration: underline;
 }
 
 .meals .meal:nth-child(odd) {
@@ -159,4 +168,108 @@ h4 {
   color: #ff8000;
   font-size: 12px;
   font-weight: 700;
+}
+
+/* BASKET */
+
+.basket {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  position: sticky;
+  top: 0;
+  width: 350px;
+  margin-top: 50px;
+}
+
+.basket-content,
+.basket-price {
+  border-bottom: solid 1px rgb(197, 197, 197);
+}
+
+.basket-item {
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.basket-buttons {
+  display: flex;
+  width: 20%;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-right: 10px;
+}
+
+.basket-plus-minus {
+  height: 20px;
+  width: 20px;
+  color: #00cdbd;
+  background-color: white;
+  border: solid 2px #00cdbd;
+  border-radius: 10px;
+}
+
+.basket-title-price {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.button-not-empty-basket {
+  width: 100%;
+  background-color: #00cdbd;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.basket-title-price p:last-child {
+  width: 60px;
+}
+
+.basket-price .sous {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.basket-price .livraison {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.basket-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button-empty-basket {
+  width: 100%;
+  background-color: #bac3c3;
+  color: #8b9a9b;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.your-basket-empty {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #acaeae;
+}
+
+.hidden {
+  display: none;
 }
